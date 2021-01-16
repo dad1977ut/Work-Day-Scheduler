@@ -19,14 +19,21 @@ if (localStorage.getItem("todo") === null) {
   timeBlocks = JSON.parse(localStorage.getItem("todo"));
 }
 for (var index = 0; index < timeArr.length; index++) {
+  var colorClass = "present";
+  if (moment().hour() > timeArr[index]) {
+    colorClass = "past";
+  } else if (moment().hour() < timeArr[index]) {
+    colorClass = "future";
+  }
+  debugger;
   $(".container").append(`<div class="input-group row">
     <span class="input-group-text time-block hour" id="basic-addon1" value ="${
       timeArr[index]
     }"
     >${newtimeArr[index]}</span>
-    <input type="text" class="form-control textarea" aria-label="Username" value ="${
-      timeBlocks[timeArr[index]]
-    }" aria-describedby="basic-addon1">
+    <input type="text" class="form-control textarea ${colorClass}" aria-label="Username" value ="${
+    timeBlocks[timeArr[index]]
+  }" aria-describedby="basic-addon1">
     <button class="btn btn-outline-secondary  saveBtn far fa-save" type="button" id="button-addon2">
     </button>
     </div>`);
