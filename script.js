@@ -13,6 +13,7 @@ var timeBlocks = {
   16: "",
   17: "",
 };
+$("#currentDay").text(moment().format("MMMM Do YYYY"));
 if (localStorage.getItem("todo") === null) {
   localStorage.setItem("todo", JSON.stringify(timeBlocks));
 } else {
@@ -25,7 +26,6 @@ for (var index = 0; index < timeArr.length; index++) {
   } else if (moment().hour() < timeArr[index]) {
     colorClass = "future";
   }
-  debugger;
   $(".container").append(`<div class="input-group row">
     <span class="input-group-text time-block hour" id="basic-addon1" value ="${
       timeArr[index]
