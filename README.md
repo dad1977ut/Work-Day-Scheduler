@@ -8,4 +8,5 @@ I want to make a day planer.
 - When I click on time block allows me to enter an event.
 - I want to save event into local storage.
 - When I refresh the page the saved events remain
+  Project website: https://dad1977ut.github.io/Work-Day-Scheduler/
   ![planner](assets/planner.jpg)
